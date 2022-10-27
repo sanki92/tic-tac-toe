@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis';
+    color: #ffffff8d;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #000;
+}
+.board{
+    position: relative;
+    height: 20rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.board::after,.board::before{
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 0rem;
+    background: #ffffff;
+    box-shadow: 6.666rem 0px 0px #ffffff;
+    animation:height 1s .5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards ;
+}
+.board::after{
+    transform: translateX(-3.333rem);
+}
+.board::before{
+    transform: translate(0,-3.333rem)rotate(90deg);
+}
+.piece{
+    width: 6.666em;
+    height: 6.666rem;
+    transition: .3s;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    display: flex;
+  
+    /* justify-content: center; */
+}
+.piece, .piece:hover, .piece:focus, .piece:active{
+    box-shadow: none !important;
+
+}
+.piece:hover{
+    background: rgba(255, 255, 255, 0.078);
+}
+@keyframes height {
+    to{height: 19rem; }
+}
+
+
+/* .players{    
+    width: 20rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    text-align: center;
+
+}
+.players .choice{
+    display: flex;
+    justify-content: center;
+    width: inherit;
+    height: 4rem;
+}
+
+.players .choice>div{
+    transition: .3s;
+    border-radius: 0 10px 10px 0;
+}
+.players .choice>div:not(:last-child){
+    border-right: 2px solid #ffffff8d;
+    border-radius: 10px 0 0 10px;
+}
+.players .choice>div:hover{
+    background: rgb(42, 45, 50);
+} */
+
+
+.players{
+    width: 20rem;
+    height: auto;
+}
+.players .choice{
+    height: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.players .choice div{
+    border: 1px dashed #ffffff8d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 9rem;
+    height: 5rem;
+    border-radius:0 10px 10px 0;
+    animation: none;
+}
+.players .choice div:hover{
+    background: rgba(255, 255, 255, 0.137);
+}
+.players .choice div:not(:last-child){
+    border-radius: 10px 0px 0 10px;
+}
+
+
+
+
+
+.circle, .cross{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: auto;
+    animation: put .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.circle span{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 4px solid #ffffff8d;
+}
+.cross span{
+    position: absolute;
+    width: 4px;
+    height: 3rem;
+    border-radius: 10px;
+    background: #ffffff8d;
+    transform: rotate(45deg);
+}
+.cross span:first-child{
+    transform: rotate(-45deg);
+}
+@keyframes put {
+    from{transform: scale(1.2);}
+}
+
+
+
